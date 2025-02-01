@@ -62,7 +62,7 @@ const Footer = () => {
                 fontWeight: 700,
               }}
             >
-              LegalConnect
+              LawWise
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
               Your trusted platform for legal services. Connect with expert lawyers and get the legal support you need.
@@ -159,11 +159,11 @@ const Footer = () => {
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <EmailIcon color="primary" />
                 <Link
-                  href="mailto:support@legalconnect.com"
+                  href="mailto:support@LawWise.com"
                   color="text.secondary"
                   sx={{ textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
                 >
-                  support@legalconnect.com
+                  support@LawWise.com
                 </Link>
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -194,7 +194,7 @@ const Footer = () => {
             gap: 0.5,
           }}
         >
-          © {currentYear} LegalConnect. All rights reserved.
+          © {currentYear} LawWise. All rights reserved.
         </Typography>
       </Container>
     </Box>

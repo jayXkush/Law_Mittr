@@ -5,14 +5,8 @@
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
-<<<<<<< HEAD
-    "@mui/icons-material": "^5.16.14",
-    "@mui/material": "^5.16.14",
-=======
-    "@google/generative-ai": "^0.21.0",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.0",
->>>>>>> a67bf34 (Updated document analyzer and added config files)
     "@mui/x-date-pickers": "^7.24.1",
     "@react-oauth/google": "^0.12.1",
     "@testing-library/jest-dom": "^5.16.5",

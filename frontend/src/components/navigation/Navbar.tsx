@@ -14,6 +14,8 @@ import PersonIcon from '@mui/icons-material/Person';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import BookIcon from '@mui/icons-material/Book';
 import HomeIcon from '@mui/icons-material/Home';
+import ForumIcon from '@mui/icons-material/Forum';
+import EventIcon from '@mui/icons-material/Event';
 import { useAuth } from '../../context/AuthContext';
 
 const Navbar = () => {
@@ -37,7 +39,7 @@ const Navbar = () => {
               textDecoration: 'none',
             }}
           >
-            LegalConnect
+            LawWise
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: 'flex', gap: 2 }}>
@@ -92,6 +94,32 @@ const Navbar = () => {
               }}
             >
               Analyze Documents
+            </Button>
+            <Button
+              component={RouterLink}
+              to="/community"
+              startIcon={<ForumIcon />}
+              sx={{
+                color: 'text.primary',
+                '&:hover': {
+                  color: '#2563EB',
+                },
+              }}
+            >
+              Community
+            </Button>
+            <Button
+              component={RouterLink}
+              to="/book-appointment"
+              startIcon={<EventIcon />}
+              sx={{
+                color: 'text.primary',
+                '&:hover': {
+                  color: '#2563EB',
+                },
+              }}
+            >
+              Book Consultation
             </Button>
           </Box>
 

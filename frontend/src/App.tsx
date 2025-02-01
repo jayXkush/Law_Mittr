@@ -1,21 +1,21 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { AppBar, Toolbar, Container, Typography, Box, CssBaseline, ThemeProvider, createTheme, alpha } from '@mui/material';
+import { AppBar, Toolbar, Container, Typography, Box, CssBaseline, ThemeProvider, createTheme, alpha, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Navbar from './components/navigation/Navbar';
-import DocumentAnalyzer from './components/document/DocumentAnalyzer';
-
-// Import components
 import LandingPage from './components/home/LandingPage';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import BlogList from './components/blog/BlogList';
-import BookAppointment from './components/appointment/BookAppointment';
+import DocumentAnalyzer from './components/document/DocumentAnalyzer';
 import NewsSection from './components/news/NewsSection';
 import MotionButton from './components/MotionButton';
 import Footer from './components/layout/Footer';
+import LegalChatbot from './components/chat/LegalChatbot';
+import Community from './components/community/Community';
+import BookAppointment from './components/appointment/BookAppointment';
 
 // Create a custom theme
 const theme = createTheme({
@@ -143,7 +143,7 @@ function App() {
           <Box 
             sx={{ 
               display: 'flex', 
-              flexDirection: 'column', 
+              flexDirection: 'column',
               minHeight: '100vh',
               background: 'linear-gradient(135deg, #F8FAFC 0%, #F0F9FF 100%)',
             }}
@@ -153,6 +153,8 @@ function App() {
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/news" element={<NewsSection />} />
                 <Route path="/blogs" element={<BlogList />} />
+                <Route path="/document-analysis" element={<DocumentAnalyzer />} />
+                <Route path="/community" element={<Community />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route
@@ -163,18 +165,11 @@ function App() {
                     </ProtectedRoute>
                   }
                 />
-                <Route
-                  path="/document-analysis"
-                  element={
-                    <ProtectedRoute>
-                      <DocumentAnalyzer />
-                    </ProtectedRoute>
-                  }
-                />
               </Routes>
             </Container>
 
             <Footer />
+            <LegalChatbot />
           </Box>
         </Router>
       </AuthProvider>
