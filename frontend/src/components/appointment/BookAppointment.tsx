@@ -18,6 +18,8 @@ import {
   Alert,
 } from '@mui/material';
 import { motion } from 'framer-motion';
+import VideoCall from '../video/VideoCall';
+import ShowVideoCallAtTime from './ShowVideoCallAtTime';
 
 const BookAppointment = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -35,6 +37,10 @@ const BookAppointment = () => {
     urgency: 'normal',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [videoCallOpen, setVideoCallOpen] = useState(false);
+  // For demo/testing: allow user to edit appointmentId (room) and userId
+  const [appointmentId, setAppointmentId] = useState('demo-appointment');
+  const [userId, setUserId] = useState('user1');
 
   const steps = ['Personal Details', 'Consultation Details', 'Review'];
 
@@ -99,6 +105,15 @@ const BookAppointment = () => {
         if (!formData.date) newErrors.date = 'Please select a preferred date';
         if (!formData.time) newErrors.time = 'Please select a preferred time';
         if (!formData.description) newErrors.description = 'Please provide a brief description';
+        // Prevent past date/time
+        if (formData.date && formData.time) {
+          const now = new Date();
+          const selected = new Date(`${formData.date}T${formData.time}`);
+          if (selected < now) {
+            newErrors.date = 'Date/time must be in the future';
+            newErrors.time = 'Date/time must be in the future';
+          }
+        }
         break;
     }
 
@@ -384,7 +399,17 @@ const BookAppointment = () => {
               A confirmation email has been sent to {formData.email}
             </Alert>
           </Paper>
-        </motion.div>
+
+
+        {/* Only show video call option at or after scheduled time */}
+        <ShowVideoCallAtTime
+          preferredMode={formData.preferredMode}
+          date={formData.date}
+          time={formData.time}
+          appointmentId={appointmentId}
+          userId={userId}
+        />
+      </motion.div>
       </Container>
     );
   }
@@ -466,6 +491,7 @@ const BookAppointment = () => {
           </form>
         </Paper>
       </motion.div>
+
     </Container>
   );
 };

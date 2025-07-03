@@ -69,19 +69,7 @@ const Navbar = () => {
             >
               News
             </Button>
-            <Button
-              component={RouterLink}
-              to="/blogs"
-              startIcon={<BookIcon />}
-              sx={{
-                color: 'text.primary',
-                '&:hover': {
-                  color: '#2563EB',
-                },
-              }}
-            >
-              Blogs
-            </Button>
+
             <Button
               component={RouterLink}
               to="/document-analysis"

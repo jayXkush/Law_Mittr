@@ -5,12 +5,13 @@ const Tesseract = require("tesseract.js");
 const pdfParse = require("pdf-parse");
 const fs = require("fs");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const { translateMultipleTexts } = require('./services/translationService');
 
 const app = express();
 app.use(cors());
 
 // Initialize Gemini
-const genAI = new GoogleGenerativeAI("AIzaSyB99T6jpCq62Jp2CrvoU8m_GFujDqNOdpc");
+const genAI = new GoogleGenerativeAI("AIzaSyDhyuXj2KLCclCsN_-yDr0NuOOLIRQQnls");
 
 // Configure multer for file uploads
 const upload = multer({ dest: "uploads/" });
@@ -84,6 +85,18 @@ app.post("/upload", upload.single("file"), async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Failed to process file" });
+  }
+});
+
+// Translation endpoint
+app.post('/api/translate', async (req, res) => {
+  try {
+    const { texts, targetLang } = req.body;
+    const translations = await translateMultipleTexts(texts, targetLang);
+    res.json({ translations });
+  } catch (error) {
+    console.error('Translation error:', error);
+    res.status(500).json({ error: 'Translation failed' });
   }
 });
 
