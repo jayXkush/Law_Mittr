@@ -15,7 +15,7 @@ import { motion } from 'framer-motion';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PersonIcon from '@mui/icons-material/Person';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API_URL = '';
 
 const BlogList = () => {
   const [blogs, setBlogs] = useState<any[]>([]);
