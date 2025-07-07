@@ -9,7 +9,7 @@ import StopScreenShareIcon from '@mui/icons-material/StopScreenShare';
 import FlipCameraAndroidIcon from '@mui/icons-material/FlipCameraAndroid';
 import CallEndIcon from '@mui/icons-material/CallEnd';
 
-const SIGNAL_SERVER_URL = 'ws://localhost:8081';
+const SIGNAL_SERVER_URL = process.env.REACT_APP_SIGNAL_SERVER_URL || 'ws://localhost:8081';
 
 interface VideoCallProps {
   open: boolean;

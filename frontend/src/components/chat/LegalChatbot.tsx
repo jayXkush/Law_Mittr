@@ -31,7 +31,7 @@ const LegalChatbot: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const messagesEndRef = useRef<null | HTMLDivElement>(null);
-  const API_KEY = 'AIzaSyDhyuXj2KLCclCsN_-yDr0NuOOLIRQQnls';
+  const API_KEY = process.env.REACT_APP_GEMINI_API_KEY || '';
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
