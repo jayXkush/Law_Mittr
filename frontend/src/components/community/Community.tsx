@@ -52,6 +52,8 @@ const CATEGORIES = [
   'General Discussion'
 ];
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 const Community: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [openNewPost, setOpenNewPost] = useState(false);
@@ -64,39 +66,42 @@ const Community: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  // Mock data for demonstration
   useEffect(() => {
-    const mockPosts: Post[] = [
-      {
-        id: '1',
-        title: 'Successfully Resolved Property Dispute',
-        content: 'I wanted to share my experience dealing with a complex property dispute...',
-        category: 'Success Stories',
-        timestamp: new Date(),
-        likes: 15,
-        comments: [],
-        anonymous: true
-      },
-      // Add more mock posts as needed
-    ];
-    setPosts(mockPosts);
+    fetch(`${API_URL}/api/community`)
+      .then((res) => {
+        if (!res.ok) throw new Error('Failed to fetch posts');
+        return res.json();
+      })
+      .then((data) => {
+        setPosts(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }, []);
 
-  const handleNewPost = () => {
-    const post: Post = {
-      id: Math.random().toString(36).substr(2, 9),
+  const handleNewPost = async () => {
+    const postData = {
       title: newPost.title,
       content: newPost.content,
       category: newPost.category,
-      timestamp: new Date(),
-      likes: 0,
-      comments: [],
-      anonymous: newPost.anonymous
+      anonymous: newPost.anonymous,
     };
-
-    setPosts(prev => [post, ...prev]);
-    setOpenNewPost(false);
-    setNewPost({ title: '', content: '', category: '', anonymous: true });
+    try {
+      const res = await fetch(`${API_URL}/api/community`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(postData),
+      });
+      if (!res.ok) throw new Error('Failed to create post');
+      const created = await res.json();
+      setPosts((prev) => [created, ...prev]);
+      setOpenNewPost(false);
+      setNewPost({ title: '', content: '', category: '', anonymous: true });
+    } catch (err) {
+      alert('Error creating post');
+      console.error(err);
+    }
   };
 
   const filteredPosts = posts.filter(post => {

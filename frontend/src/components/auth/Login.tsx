@@ -77,7 +77,7 @@ const Login = () => {
         id: '1',
         name: 'John Doe', // This would come from your backend after validating the Google token
         email: 'john@example.com',
-        userType: userType as 'client' | 'lawyer',
+        userType: userType as 'client' | 'Lawyers',
         avatar: 'https://lh3.googleusercontent.com/a/default-user'
       });
       
@@ -153,7 +153,7 @@ const Login = () => {
             sx={{ mb: 3 }}
           >
             <Tab label="Client" value="consumer" />
-            <Tab label="Lawyer" value="lawyer" />
+            <Tab label="Lawyers" value="Lawyers" />
           </Tabs>
 
           <form onSubmit={handleSubmit}>

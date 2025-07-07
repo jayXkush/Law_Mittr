@@ -1,14 +1,14 @@
-# LawWise 🏛️🔗  
+# Lawyers 🏛️🔗  
 
 ### Your One-Stop Solution for Legal Assistance  
 
-LawWise is a platform where users can **book appointments** with **verified lawyers** at **reasonable pricing**. It also provides an updated **news & blogs section** to keep users informed about the latest legal trends, along with an **analyze document** feature that helps users understand legal documents in simple language.
+Lawyers is a platform where users can **book appointments** with **verified Lawyers** at **reasonable pricing**. It also provides an updated **news & blogs section** to keep users informed about the latest legal trends, along with an **analyze document** feature that helps users understand legal documents in simple language.
 
 ---
 
 ## 🚀 Features  
 
-- ✅ **Book Appointments** – Easily schedule consultations with verified lawyers at fair prices.  
+- ✅ **Book Appointments** – Easily schedule consultations with verified Lawyers at fair prices.  
 - ✅ **Legal News & Blogs** – Stay updated with the latest legal developments and expert opinions.  
 - ✅ **Analyze Documents** – Upload legal notices or documents to get a simplified explanation.  
 - ✅ **User-Friendly Interface** – Seamless navigation and easy access to legal resources.  
@@ -37,7 +37,7 @@ LawWise is a platform where users can **book appointments** with **verified lawy
 ### 1️⃣ Clone the Repository  
 
 ```sh
-git clone https://github.com/your-username/lawwise.git
-cd lawwise
+git clone https://github.com/your-username/Lawyers.git
+cd Lawyers
 
 ```

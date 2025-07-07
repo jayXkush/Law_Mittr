@@ -229,7 +229,7 @@ const VideoCall: React.FC<VideoCallProps> = ({ open, onClose, room, userId }) =>
             <video ref={localVideoRef} autoPlay muted playsInline style={{ width: 240, background: '#000' }} />
           </Box>
           <Box>
-            <Typography variant="subtitle2">Lawyer</Typography>
+            <Typography variant="subtitle2">Lawyers</Typography>
             <video ref={remoteVideoRef} autoPlay playsInline style={{ width: 240, background: '#000' }} />
           </Box>
         </Box>

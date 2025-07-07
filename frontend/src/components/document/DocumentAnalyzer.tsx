@@ -23,6 +23,25 @@ const DocumentAnalyzer = () => {
   const [error, setError] = useState<string | null>(null);
   const [summary, setSummary] = useState<string | null>(null);
   const [ocrText, setOcrText] = useState<string | null>(null);
+  const [selectedLanguage, setSelectedLanguage] = useState<string>('English');
+
+  const indianLanguages = [
+    'English',
+    'Hindi',
+    'Bengali',
+    'Telugu',
+    'Marathi',
+    'Tamil',
+    'Urdu',
+    'Gujarati',
+    'Kannada',
+    'Odia',
+    'Punjabi',
+    'Malayalam',
+    'Assamese',
+    'Maithili',
+    'Santali',
+  ];
 
   // Extract text from image using Tesseract
   const extractTextFromImage = async (file: File): Promise<string> => {
@@ -59,6 +78,7 @@ const DocumentAnalyzer = () => {
 - Highlight key points, obligations, rights, dates, and any important legal implications
 - Avoid copying the original text verbatim
 - Use a professional and visually clear style
+- Respond in ${selectedLanguage} language
 
 Extracted Text:
 ${extractedText}`;
@@ -79,9 +99,23 @@ ${extractedText}`;
         <Paper elevation={3} sx={{ p: 4 }}>
           <Typography variant="h5" gutterBottom color="primary">Document Analyzer</Typography>
           <Typography variant="body1" gutterBottom>
-            Upload an image of a legal document. The system will extract the text and provide a summary using Gemini.
+            Upload an image of a legal document to get simple Analysis in your Regional Language.
           </Typography>
           <Box mt={3} mb={2}>
+            <Box mb={2}>
+              <label htmlFor="language-select" style={{ fontWeight: 500, marginRight: 8 }}>Select Language:</label>
+              <select
+                id="language-select"
+                value={selectedLanguage}
+                onChange={e => setSelectedLanguage(e.target.value)}
+                style={{ padding: '6px 12px', borderRadius: 4, border: '1px solid #bdbdbd', fontSize: 16 }}
+                disabled={loading}
+              >
+                {indianLanguages.map(lang => (
+                  <option key={lang} value={lang}>{lang}</option>
+                ))}
+              </select>
+            </Box>
             <Button
               variant="contained"
               component="label"

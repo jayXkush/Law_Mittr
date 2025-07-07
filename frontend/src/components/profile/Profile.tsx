@@ -184,7 +184,7 @@ const Profile = () => {
                 {user?.name}
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                {user?.userType === 'lawyer' ? 'Legal Professional' : 'Client'}
+                {user?.userType === 'Lawyers' ? 'Legal Professional' : 'Client'}
               </Typography>
             </Box>
             <Box>

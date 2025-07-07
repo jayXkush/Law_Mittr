@@ -5,7 +5,7 @@ interface User {
   name: string;
   email: string;
   avatar?: string;
-  userType: 'client' | 'lawyer';
+  userType: 'client' | 'Lawyers';
 }
 
 interface AuthContextType {

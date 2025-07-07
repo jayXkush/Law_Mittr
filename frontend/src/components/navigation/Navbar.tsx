@@ -39,7 +39,7 @@ const Navbar = () => {
               textDecoration: 'none',
             }}
           >
-            LawWise
+            LawMittr
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: 'flex', gap: 2 }}>

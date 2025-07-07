@@ -31,7 +31,7 @@ const BookAppointment = () => {
     phone: '',
     date: '',
     time: '',
-    lawyerType: '',
+    LawyersType: '',
     description: '',
     preferredMode: 'in-person',
     urgency: 'normal',
@@ -44,14 +44,14 @@ const BookAppointment = () => {
 
   const steps = ['Personal Details', 'Consultation Details', 'Review'];
 
-  const lawyerTypes = [
-    'Criminal Law',
-    'Civil Law',
-    'Corporate Law',
-    'Family Law',
-    'Property Law',
-    'Tax Law',
-    'Immigration Law',
+  const LawyersTypes = [
+    'Criminal Lawyers',
+    'Civil Lawyers',
+    'Corporate Lawyers',
+    'Family Lawyers',
+    'Property Lawyers',
+    'Tax Lawyers',
+    'Immigration Lawyers',
     'Intellectual Property',
   ];
 
@@ -101,7 +101,7 @@ const BookAppointment = () => {
         }
         break;
       case 1:
-        if (!formData.lawyerType) newErrors.lawyerType = 'Please select a legal service type';
+        if (!formData.LawyersType) newErrors.LawyersType = 'Please select a legal service type';
         if (!formData.date) newErrors.date = 'Please select a preferred date';
         if (!formData.time) newErrors.time = 'Please select a preferred time';
         if (!formData.description) newErrors.description = 'Please provide a brief description';
@@ -225,24 +225,24 @@ const BookAppointment = () => {
         return (
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              <FormControl fullWidth error={!!errors.lawyerType}>
+              <FormControl fullWidth error={!!errors.LawyersType}>
                 <InputLabel>Type of Legal Service</InputLabel>
                 <Select
                   required
-                  name="lawyerType"
-                  value={formData.lawyerType}
+                  name="LawyersType"
+                  value={formData.LawyersType}
                   onChange={handleSelectChange}
                   label="Type of Legal Service"
                 >
-                  {lawyerTypes.map((type) => (
+                  {LawyersTypes.map((type) => (
                     <MenuItem key={type} value={type}>
                       {type}
                     </MenuItem>
                   ))}
                 </Select>
-                {errors.lawyerType && (
+                {errors.LawyersType && (
                   <Typography color="error" variant="caption" sx={{ mt: 1, ml: 2 }}>
-                    {errors.lawyerType}
+                    {errors.LawyersType}
                   </Typography>
                 )}
               </FormControl>
@@ -362,7 +362,7 @@ const BookAppointment = () => {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <Typography variant="subtitle1" color="primary">Consultation Details</Typography>
-                <Typography>Service Type: {formData.lawyerType}</Typography>
+                <Typography>Service Type: {formData.LawyersType}</Typography>
                 <Typography>Date: {formData.date}</Typography>
                 <Typography>Time: {formData.time}</Typography>
                 <Typography>Mode: {formData.preferredMode}</Typography>

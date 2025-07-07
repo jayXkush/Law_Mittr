@@ -9,8 +9,8 @@ const Register = () => {
     email: '',
     password: '',
     confirmPassword: '',
-    lawyerType: '',
-    ...(userType === 'lawyer' && {
+    LawyersType: '',
+    ...(userType === 'Lawyer' && {
       barNumber: '',
       specialization: '',
     }),
@@ -37,7 +37,7 @@ const Register = () => {
     // Handle registration logic here
   };
 
-  const lawyerTypes = ['Criminal', 'Civil', 'Corporate'];
+  const LawyersTypes = ['Criminal', 'Civil', 'Corporate'];
 
   return (
     <Container component="main" maxWidth="xs">
@@ -57,7 +57,7 @@ const Register = () => {
             sx={{ mb: 3 }}
           >
             <Tab label="Consumer" value="consumer" />
-            <Tab label="Lawyer" value="lawyer" />
+            <Tab label="Lawyers" value="Lawyers" />
           </Tabs>
 
           <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
@@ -101,7 +101,7 @@ const Register = () => {
               onChange={handleInputChange}
             />
 
-            {userType === 'lawyer' && (
+            {userType === 'Lawyers' && (
               <>
                 <TextField
                   margin="normal"
@@ -123,12 +123,12 @@ const Register = () => {
                 />
                 <Select
                   fullWidth
-                  name="lawyerType"
-                  value={formData.lawyerType}
-                  label="Type of Lawyer"
+                  name="LawyersType"
+                  value={formData.LawyersType}
+                  label="Type of Lawyers"
                   onChange={handleSelectChange}
                 >
-                  {lawyerTypes.map((type) => (
+                  {LawyersTypes.map((type) => (
                     <MenuItem key={type} value={type}>
                       {type}
                     </MenuItem>

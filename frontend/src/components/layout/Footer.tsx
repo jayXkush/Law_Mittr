@@ -29,11 +29,11 @@ const Footer = () => {
   ];
 
   const practiceAreas = [
-    'Family Law',
+    'Family Lawyers',
     'Criminal Defense',
-    'Corporate Law',
-    'Real Estate Law',
-    'Immigration Law',
+    'Corporate Lawyers',
+    'Real Estate Lawyers',
+    'Immigration Lawyers',
     'Intellectual Property',
   ];
 
@@ -62,10 +62,10 @@ const Footer = () => {
                 fontWeight: 700,
               }}
             >
-              LawWise
+              LawMittr
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-              Your trusted platform for legal services. Connect with expert lawyers and get the legal support you need.
+              Your trusted platform for legal services. Connect with expert Lawyers and get the legal support you need.
             </Typography>
             <Stack direction="row" spacing={1}>
               {socialLinks.map((social, index) => (
@@ -159,11 +159,11 @@ const Footer = () => {
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <EmailIcon color="primary" />
                 <Link
-                  href="mailto:support@LawWise.com"
+                  href="mailto:support@LawMittr.com"
                   color="text.secondary"
                   sx={{ textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
                 >
-                  support@LawWise.com
+                  support@Lawyers.com
                 </Link>
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -194,7 +194,7 @@ const Footer = () => {
             gap: 0.5,
           }}
         >
-          © {currentYear} LawWise. All rights reserved.
+          © {currentYear} Lawyers. All rights reserved.
         </Typography>
       </Container>
     </Box>

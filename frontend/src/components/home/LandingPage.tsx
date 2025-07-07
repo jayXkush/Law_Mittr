@@ -93,7 +93,7 @@ const LandingPage: React.FC = () => {
                 transition={{ delay: 0.5, duration: 0.8 }}
               >
                 <Typography variant="h5" color="text.secondary" paragraph>
-                  Connect with expert lawyers and get the legal help you need
+                  Connect with expert Lawyers and get the legal help you need
                 </Typography>
               </motion.div>
               <motion.div
@@ -129,9 +129,9 @@ const LandingPage: React.FC = () => {
           {/* Features Section */}
           <Grid container spacing={4} sx={{ my: 4 }}>
             {[
-              { icon: GavelIcon, title: "Expert Lawyers", description: "Connect with experienced lawyers specializing in various fields of law" },
+              { icon: GavelIcon, title: "Expert Lawyers", description: "Connect with experienced Lawyers specializing in various fields of Lawyers" },
               { icon: ArticleIcon, title: "Legal Blogs", description: "Stay informed with our latest legal insights and analysis" },
-              { icon: EventIcon, title: "Easy Scheduling", description: "Book appointments with lawyers at your convenience" }
+              { icon: EventIcon, title: "Easy Scheduling", description: "Book appointments with Lawyers at your convenience" }
             ].map((feature, index) => (
               <Grid item xs={12} md={4} key={index}>
                 <motion.div
@@ -179,12 +179,12 @@ const LandingPage: React.FC = () => {
               </Typography>
               <Grid container spacing={3}>
                 {[
-                  { icon: BusinessIcon, area: "Corporate Law", description: "Business formations, contracts, and compliance" },
-                  { icon: FamilyRestroomIcon, area: "Family Law", description: "Divorce, custody, and family matters" },
+                  { icon: BusinessIcon, area: "Corporate Lawyers", description: "Business formations, contracts, and compliance" },
+                  { icon: FamilyRestroomIcon, area: "Family Lawyers", description: "Divorce, custody, and family matters" },
                   { icon: AccountBalanceIcon, area: "Civil Litigation", description: "Dispute resolution and court representation" },
-                  { icon: HomeWorkIcon, area: "Real Estate", description: "Property law and transactions" },
-                  { icon: AttachMoneyIcon, area: "Tax Law", description: "Tax planning and compliance" },
-                  { icon: GavelIcon, area: "Criminal Law", description: "Criminal defense and prosecution" }
+                  { icon: HomeWorkIcon, area: "Real Estate", description: "Property Lawyers and transactions" },
+                  { icon: AttachMoneyIcon, area: "Tax Lawyers", description: "Tax planning and compliance" },
+                  { icon: GavelIcon, area: "Criminal Lawyers", description: "Criminal defense and prosecution" }
                 ].map((practice, index) => (
                   <Grid item xs={12} sm={6} md={4} key={index}>
                     <motion.div
@@ -243,34 +243,34 @@ const LandingPage: React.FC = () => {
                   {
                     name: "Adv. Rajesh Kumar",
                     initials: "RK",
-                    specialization: "Corporate Law",
+                    specialization: "Corporate Lawyers",
                     experience: "15+ years",
                     rating: 4.8,
                     cases: "500+",
-                    expertise: ["Mergers & Acquisitions", "Business Law", "Contracts"],
-                    description: "Specializes in corporate restructuring and international business law. Has handled major M&A deals and corporate disputes."
+                    expertise: ["Mergers & Acquisitions", "Business Lawyers", "Contracts"],
+                    description: "Specializes in corporate restructuring and international business Lawyers. Has handled major M&A deals and corporate disputes."
                   },
                   {
                     name: "Adv. Priya Sharma",
                     initials: "PS",
-                    specialization: "Family Law",
+                    specialization: "Family Lawyers",
                     experience: "12+ years",
                     rating: 4.9,
                     cases: "300+",
-                    expertise: ["Divorce Law", "Child Custody", "Family Disputes"],
-                    description: "Expert in family law matters with a compassionate approach. Focuses on mediation and amicable settlements."
+                    expertise: ["Divorce Lawyers", "Child Custody", "Family Disputes"],
+                    description: "Expert in family Lawyers matters with a compassionate approach. Focuses on mediation and amicable settlements."
                   },
                   {
                     name: "Adv. Amit Patel",
                     initials: "AP",
-                    specialization: "Criminal Law",
+                    specialization: "Criminal Lawyers",
                     experience: "18+ years",
                     rating: 4.7,
                     cases: "1000+",
                     expertise: ["Criminal Defense", "White Collar Crime", "Appeals"],
                     description: "Renowned criminal defense attorney with expertise in handling complex criminal cases and appeals."
                   }
-                ].map((lawyer, index) => (
+                ].map((Lawyers, index) => (
                   <Grid item xs={12} md={4} key={index}>
                     <motion.div
                       variants={cardVariants}
@@ -304,25 +304,25 @@ const LandingPage: React.FC = () => {
                               border: '4px solid white'
                             }}
                           >
-                            {lawyer.initials}
+                            {Lawyers.initials}
                           </Avatar>
                         </Box>
                         <CardContent sx={{ pt: 6 }}>
                           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                             <Typography variant="h5" component="h3" gutterBottom>
-                              {lawyer.name}
+                              {Lawyers.name}
                             </Typography>
                             <Typography variant="subtitle1" color="primary" gutterBottom>
-                              {lawyer.specialization}
+                              {Lawyers.specialization}
                             </Typography>
                             <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                              <Rating value={lawyer.rating} precision={0.1} readOnly size="small" />
+                              <Rating value={Lawyers.rating} precision={0.1} readOnly size="small" />
                               <Typography variant="body2" sx={{ ml: 1 }}>
-                                ({lawyer.rating})
+                                ({Lawyers.rating})
                               </Typography>
                             </Box>
                             <Typography variant="body2" color="text.secondary" gutterBottom>
-                              Experience: {lawyer.experience} | Cases: {lawyer.cases}
+                              Experience: {Lawyers.experience} | Cases: {Lawyers.cases}
                             </Typography>
                             <Typography 
                               variant="body2" 
@@ -330,10 +330,10 @@ const LandingPage: React.FC = () => {
                               align="center"
                               sx={{ mt: 1, mb: 2 }}
                             >
-                              {lawyer.description}
+                              {Lawyers.description}
                             </Typography>
                             <Box sx={{ mt: 'auto', display: 'flex', flexWrap: 'wrap', gap: 1, justifyContent: 'center' }}>
-                              {lawyer.expertise.map((exp, i) => (
+                              {Lawyers.expertise.map((exp, i) => (
                                 <Chip
                                   key={i}
                                   label={exp}
